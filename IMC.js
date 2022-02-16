@@ -21,11 +21,11 @@ while (codCliente < nome.length) {
     nome[codCliente] +
       ' ' +
       sobrenome[codCliente] +
-      //if(plano == !null || undefined) {
-      // return  ' (' + plano[codCliente] + ')'
-      //} else {
-      //return  ' (sem-plano) '
-      //}
+      //   if (plano == !null || undefined) {
+      // return  ' (' + plano[codCliente] + ')' {
+      // else {
+      // return ' (sem-plano) '
+      // }
       ' (' +
       plano[codCliente] +
       ')' +
