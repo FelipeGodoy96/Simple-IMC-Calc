@@ -1,10 +1,23 @@
-//function testeLogico() {
-// if (plano[codCliente] == !null) {
-//   return ' (' + plano[codCliente] + ')'
-// } else {
-//   return ' (sem-plano) '
-// }
-//}
+let classificacao = function () {
+  if (IMCdepurado < 18.5) {
+    return 'magreza'
+  } else if (IMCdepurado > 18.5 && IMCdepurado < 25) {
+    return 'normal'
+  } else if (IMCdepurado > 25 && IMCdepurado < 30) {
+    return 'sobrepeso'
+  } else if (IMCdepurado > 30 && IMCdepurado < 40) {
+    return 'obesidade'
+  } else if (IMCdepurado > 40) {
+    return 'obesidade grave'
+  } else return console.log('validação de classificação indefinida')
+}
+let testeLogico = function () {
+  if (plano[codCliente] != null || plano[codCliente] != undefined) {
+    return ' (' + plano[codCliente] + ')'
+  } else {
+    return ' (plano expirado)'
+  }
+}
 
 let nome = ['José', 'Carlos', 'Aline', 'Ana']
 let sobrenome = ['da Silva', 'de Souza', 'Ferreira', 'Paula']
@@ -16,27 +29,11 @@ function IMC(weight, height) {
   return peso[weight] / (altura[height] * altura[height])
 }
 
-//let classificacao = function() {
-//  if ()
-//} --- criar função de if e else para classificação de IMC e grau
-
 let codCliente = ''
-
-//codCliente = prompt(
-//  'Por favor, insira o código do cliente para cálculo de IMC.'
-//) --- código para ser rodado em navegador
 
 codCliente = 0
 weight = codCliente
 height = codCliente
-
-let testeLogico = function () {
-  if (plano[codCliente] != null) {
-    return ' (' + plano[codCliente] + ')'
-  } else {
-    return ' (plano expirado)'
-  }
-}
 
 let IMCdepurado = IMC(weight, height)
 while (codCliente < nome.length) {
@@ -49,10 +46,9 @@ while (codCliente < nome.length) {
       idade[codCliente] +
       ' anos e seu Índice de Massa Corporal é de ' +
       IMCdepurado.toFixed(2) +
-      '. Sendo assim, encontra-se na classificação de '
-    // +
-    //classificacao() +
-    //'.'
+      '. Sua classificação é ' +
+      classificacao() +
+      '.'
   )
   codCliente++
   IMCdepurado++
